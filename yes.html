@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>While Loop Example</title>
+    <title>Multiplication Tables</title>
 </head>
 <body>
-  <h2>While Loop Output:</h2>
-  <div id="output"></div>
+    <h1>Multiplication Tables</h1>
+    <input id="num1" type="number" placeholder="Enter first number" value="2">
+    <button onclick="generateTables()">Generate Tables</button>
+    <div id="output"></div>
 
-  <script>
-    let count = 0;
-    let output = "";
+    <script>
+        function generateTables() {
+            let num1 = parseInt(document.getElementById('num1').value);
 
-    while (count < 5) {
-      output += "Count is: " + count + "<br/>";
-      count++;
-    }
+            let output = "Table of " + num1 + ":\n";
+            for (let i = 1; i <= 10; i++) {
+                let product = num1 * i;
+                let type = product % 2 === 0 ? "Even" : "Odd";
+                output += num1 + " x " + i + " = " + product + " (" + type + ")\n";
+            }
+           
 
-    document.getElementById("output").innerHTML = output;
-  </script>
+            document.getElementById('output').innerText = output;
+        }
+
+        
+        generateTables();
+    </script>
 </body>
 </html>
