@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>While Loop Example</title>
+</head>
+<body>
+  <h2>While Loop Output:</h2>
+  <div id="output"></div>
+
+  <script>
+    let count = 0;
+    let output = "";
+
+    while (count < 5) {
+      output += "Count is: " + count + "<br/>";
+      count++;
+    }
+
+    document.getElementById("output").innerHTML = output;
+  </script>
+</body>
+</html>
