@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="text" name="" id="in">
+    <button onclick="abes()">Click</button>
+    <p id="para"></p>
+
+    <script>
+        function abes(){
+            let filedInput=document.getElementById("in")
+            let value=filedInput.value;
+
+            document.getElementById("para").innerHTML=value;
+        }
+    </script>
+
 </body>
 </html>
