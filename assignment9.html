@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Resume Builder</title>
+</head>
+<body>
+  <h2>Resume Builder</h2>
+
+    <img src="https://imgs.search.brave.com/flCReSR81e1z04QAlUM-8El9goaoldC2sfp8OZSn_m8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMucmVzdW1lZ2lh/bnRzLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvc2l0ZXMvMjUv/MjAyNC8xMi8xMTEz/MTUyMi9yZXN1bWVj/b2FjaF9yZXN1bWVi/dWlsZGVyX2p1bWJv/LTItMTA0MHg5OTQu/d2VicA" height="100px">
+  <div id="inputs">
+    <label>Name:</label><br>
+    <input type="text" id="name" ><br><br>
+
+    <label>Degree:</label><br>
+    <input type="text" id="degree" ><br><br>
+
+    <label>Known Languages:</label><br>
+    <input type="text" id="languages" ><br><br>
+
+    <button onclick="generateResume()">Generate Resume</button>
+  </div>
+
+  <hr>
+  <div id="resume" style="display:none;">
+    <h3>Resume </h3>
+    <p><b>Name:</b> <span id="outName"></span></p>
+    <p><b>Degree:</b> <span id="outDegree"></span></p>
+    <p><b>Known Languages:</b> <span id="outLang"></span></p>
+  </div>
+
+  <script>
+
+    function generateResume() {
+      document.getElementById('outName').textContent = document.getElementById('name').value;
+      document.getElementById('outDegree').textContent = document.getElementById('degree').value;
+      document.getElementById('outLang').textContent = document.getElementById('languages').value;
+
+ 
+      document.getElementById('inputs').style.display = 'none';
+      document.getElementById('resume').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
