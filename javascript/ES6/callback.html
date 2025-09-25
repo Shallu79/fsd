@@ -8,6 +8,27 @@
 <body>
     <script>
 
+        function getD(dataid, nextdata){
+
+            setTimeout(()=>{
+                console.log("data" , dataid);
+                if(nextdata){
+                    nextdata();
+                }
+            },2000);
+
+        }
+        getD(1,()=>{ 
+            getD(11,()=>{
+                getD(111,()=>{
+                     getD(1111,()=>{
+
+                     });
+                });
+            });
+        });
+      
+
         function sum(a,b){
             console.log(a+b);
         }
