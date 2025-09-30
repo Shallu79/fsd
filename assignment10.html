@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>new page</title>
+  <style>
+    #input {
+      display: flex;
+      justify-content: space-between;
+    }
+    #hh input {
+      margin: 5px 0;
+      padding: 6px;
+    }
+    #hh button {
+      margin-left: 5px;
+    }
+    #submit-btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background: #ff4da6;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-    
+  <div id="container">
+    <h1>To-Do List</h1>
+    <div id="input">
+      <img src="https://marketplace.canva.com/EAGBgZ1fN-s/1/0/1600w/canva-pink-cute-simple-flower-shop-circle-logo-w4-RAIbVqVU.jpg" height="200px">
+      
+      <div id="hh">
+        <div class="input-group">
+          <input type="text" placeholder="Enter task">
+          <button onclick="addInput()">+</button>
+        </div>
+      </div>
+    </div>
+
+   
+    <button id="submit-btn" onclick="submitTasks()">Submit To-Do List</button>
+  </div>
+
+  <script>
+    function addInput() {
+      let container = document.getElementById("hh");
+
+      let div = document.createElement("div");
+      div.className = "input-group";
+
+      let input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Enter task";
+
+      let button = document.createElement("button");
+      button.textContent = "+";
+      button.onclick = addInput;
+
+      div.appendChild(input);
+      div.appendChild(button);
+      container.appendChild(div);
+    }
+
+    function submitTasks() {
+      let inputs = document.querySelectorAll("#hh input");
+      let tasks = [];
+      inputs.forEach(inp => {
+        if (inp.value.trim() !== "") {
+          tasks.push(inp.value.trim());
+        }
+      });
+
+     
+      let newWindow = window.open("", "_blank");
+  
+
+      newWindow.onload = function() {
+        let taskList = newWindow.document.getElementById("task-list");
+        tasks.forEach(task => {
+          let li = newWindow.document.createElement("li");
+          li.textContent = task;
+          taskList.appendChild(li);
+        });
+      };
+    }
+  </script>
 </body>
 </html>
