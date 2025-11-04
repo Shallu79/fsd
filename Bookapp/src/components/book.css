@@ -1,0 +1,20 @@
+.Book {
+    border: 1px solid #ff0000;
+    padding: 16px;
+    margin: 16px;
+    height: 300px;
+    width: 200px;
+    background-color: #f2f216;
+}
+
+.Book img {
+    width: 100%;
+    height: auto;
+}
+
+.Book p {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 40px;
+}
