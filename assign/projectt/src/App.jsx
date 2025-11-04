@@ -1,18 +1,16 @@
 
 import './App.css'
-
-import Navbar from './components/Navbar';
-import Card from './components/card';
-import Hero from './components/hero';
-import Footer from './Components/footer';
+import Count from './Components/count'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-       <Navbar></Navbar>
-       <Card></Card>
-       <Hero></Hero>
+    <div className='App'>
+      
+       <Count/>
+
+      </div>
+     
 
     </>
   )
