@@ -1,0 +1,15 @@
+// Components/register.jsx
+function Register() {
+  return (
+    <div>
+      <h2>Register Page</h2>
+      <form>
+        <input type="text" placeholder="Username" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <button>Register</button>
+      </form>
+    </div>
+  )
+}
+export default Register
