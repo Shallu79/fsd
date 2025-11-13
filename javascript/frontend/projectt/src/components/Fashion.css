@@ -1,0 +1,13 @@
+#card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.fashion-image {
+  border-radius: 8px;
+}
