@@ -3,5 +3,5 @@ async function f() {
     
 
 }
-
+//f() becomes a rejected promise
 f().catch(alert);
