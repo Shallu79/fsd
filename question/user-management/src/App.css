@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fde6f2;
+}
+
+.container {
+  width: 90%;
+  margin: 30px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #c2185b;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  padding: 8px;
+  border: 1px solid #f8bbd0;
+  border-radius: 4px;
+}
+
+.form button {
+  grid-column: span 3;
+  padding: 10px;
+  background: #ec407a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #d81b60;
+}
+
+.search {
+  margin-bottom: 15px;
+}
+
+.search input {
+  padding: 8px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #f8bbd0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #f8bbd0;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #ec407a;
+  color: white;
+}
+
+table button {
+  margin: 2px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table button:first-child {
+  background-color: #ff80ab;
+  color: white;
+}
+
+table button:last-child {
+  background-color: #c2185b;
+  color: white;
+}
