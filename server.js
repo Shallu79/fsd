@@ -1,3 +1,4 @@
+const mangoose=requirea('mongodb+srv://shalinisri249_db_user:0cnHcNI1EnKSPXGF@cluster0.pb0emod.mongodb.net/')
 const express=require('express');
 const app=express();
 const PORT=3000;
