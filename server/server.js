@@ -1,43 +1,42 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-
+const express = require('express');
+const cors = require('cors');
 const app = express();
+
+
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/authDB")
-.then(() => console.log("DB connected"))
-.catch(err => console.log(err));
 
-const UserSchema = new mongoose.Schema({
-  email: String,
-  password: String
+
+app.get('/', (req, res) => {
+    res.send("<h2>👋 Welcome to shalini's Backend Server!</h2>");
 });
 
-const User = mongoose.model("User", UserSchema);
+app.post('/api/login', (req, res) => {
+    
+    const { email, password } = req.body;
 
-// SIGNUP
-app.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+    console.log("Data come from frontend:", email, password);
 
-  const existing = await User.findOne({ email });
-  if (existing) return res.send("User already exists");
-
-  const user = new User({ email, password });
-  await user.save();
-
-  res.send("Signup successful");
+    
+    if (email && password) {
+        
+        res.status(200).json({ 
+            success: true, 
+            message: "Login successful API hit!", 
+            userEmail: email 
+        });
+    } else {
+       
+        res.status(400).json({ 
+            success: false, 
+            error: "Email aur Password both required." 
+        });
+    }
 });
 
-// LOGIN
-app.post("/login", async (req, res) => {
-  const { email, password } = req.body;
 
-  const user = await User.findOne({ email, password });
-  if (user) return res.send("Login successful");
-
-  res.send("Invalid credentials");
+const PORT = 5001;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT} 🚀`);
 });
-
-app.listen(5000, () => console.log("Server running on 5000"));
